@@ -10,7 +10,7 @@ bash build.sh
 
 ## Related Projects
 
-- [Japan Map Puzzle](https://marmooo.github.io/japan-map-puzzle)
+- [Japan Map Puzzle](https://marmooo.github.io/japan-map-puzzle/)
 
 ## Attribution
 
