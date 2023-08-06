@@ -1,6 +1,6 @@
 # usa-map-puzzle
 
-[A map puzzle of USA states](https://marmooo.github.io/usa-map-puzzle).
+[A map puzzle of USA states](https://marmooo.github.io/usa-map-puzzle/).
 
 ## Build
 
