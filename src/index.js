@@ -549,6 +549,7 @@ function getTTSLang(htmlLang) {
       return "ja-JP";
   }
 }
+
 async function initStatesInfo(htmlLang) {
   const response = await fetch(`/usa-map-puzzle/data/${htmlLang}.lst`);
   const text = await response.text();
