@@ -436,7 +436,6 @@ function getSVGScale(map, doc) {
 function shuffleSVG() {
   canvas.clear();
   const course = document.getElementById("courseOption").selectedIndex;
-  const map = document.getElementById("map");
   const doc = map.contentDocument;
   const scale = getSVGScale(map, doc);
   const states = doc.querySelectorAll(".states > path");
@@ -476,7 +475,7 @@ function startGame() {
 }
 
 function initCanvas() {
-  const rect = document.getElementById("map").getBoundingClientRect();
+  const rect = map.getBoundingClientRect();
   const canvas = new fabric.Canvas("canvas", {
     left: rect.left,
     top: rect.top,
@@ -557,6 +556,7 @@ async function initStatesInfo(htmlLang) {
   stateTextLength = calcStateTextLength(htmlLang, stateNames);
 }
 
+const map = document.getElementById("map");
 const positionThreshold = 20;
 const scaleThreshold = 0.3;
 const angleThreshold = 20;
@@ -578,7 +578,6 @@ document.addEventListener("click", unlockAudio, {
   useCapture: true,
 });
 globalThis.addEventListener("resize", () => {
-  const map = document.getElementById("map");
   const rect = map.getBoundingClientRect();
   resizePieces(rect);
   if (stateText) {
