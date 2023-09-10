@@ -11,6 +11,7 @@ bash build.sh
 ## Related Projects
 
 - [Japan Map Puzzle](https://marmooo.github.io/japan-map-puzzle/)
+- [China Map Puzzle](https://marmooo.github.io/china-map-puzzle/)
 
 ## Attribution
 
