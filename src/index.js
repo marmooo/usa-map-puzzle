@@ -388,7 +388,7 @@ function setPieceGuideEvent(island, group) {
       const e = event.e;
       const touch = (e instanceof TouchEvent) ? e.touches[0] : e;
       const tx = touch.clientX;
-      const ty = touch.clientY - 30;
+      const ty = touch.clientY - 16;
       const id = getStateId(island);
       const stateName = stateNames[id];
       const html = `
@@ -550,7 +550,7 @@ function findPieceNodes(offsetX, offsetY) {
 
 function setMapGuideTooltip(event, island) {
   const tx = event.clientX;
-  const ty = event.clientY - 30;
+  const ty = event.clientY - 16;
   const id = getStateId(island);
   const stateName = stateNames[id];
   const html = `
