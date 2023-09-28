@@ -212,8 +212,8 @@ function addStateText(stateName) {
   }, 2000);
 }
 
-function setMovableOption(group, course) {
-  switch (course) {
+function setMovableOption(group, grade) {
+  switch (grade) {
     case 0:
     case 1:
     case 2:
@@ -283,7 +283,7 @@ function setMovableOption(group, course) {
   }
 }
 
-function addControlRect(group, course) {
+function addControlRect(group, grade) {
   group.setCoords();
   const rect = group.getBoundingRect();
   const rectLength = Math.max(rect.width, rect.height);
@@ -308,7 +308,7 @@ function addControlRect(group, course) {
     transparentCorners: false,
     cornerStyle: "circle",
   });
-  if (course < 9) {
+  if (grade < 9) {
     wrapper.setControlsVisibility({
       bl: false,
       br: false,
@@ -403,7 +403,7 @@ function setPieceGuideEvent(island, group) {
   });
 }
 
-function setMovable(island, svg, course) {
+function setMovable(island, svg, grade) {
   new fabric.loadSVGFromString(svg.outerHTML, (objects, options) => {
     const group = fabric.util.groupSVGElements(objects, options);
     group.set({
@@ -418,7 +418,7 @@ function setMovable(island, svg, course) {
       transparentCorners: false,
       cornerStyle: "circle",
     });
-    setMovableOption(group, course);
+    setMovableOption(group, grade);
     canvas.add(group);
 
     if (group.selectable) {
@@ -433,7 +433,7 @@ function setMovable(island, svg, course) {
         }
       });
     } else {
-      const wrapper = addControlRect(group, course);
+      const wrapper = addControlRect(group, grade);
       setPieceGuideEvent(island, wrapper);
       wrapper.on("modified", () => {
         playAudio("modified");
@@ -469,16 +469,16 @@ function getSVGScale(map, doc) {
 
 function shuffleSVG() {
   canvas.clear();
-  const course = document.getElementById("courseOption").selectedIndex;
+  const grade = document.getElementById("gradeOption").selectedIndex;
   const doc = map.contentDocument;
   const scale = getSVGScale(map, doc);
   const states = doc.querySelectorAll(".states > path");
   states.forEach((state) => {
     state.removeAttribute("fill");
     const svg = getPieceSvg(state, scale);
-    setMovable(state, svg, course);
+    setMovable(state, svg, grade);
   });
-  switch (course % 3) {
+  switch (grade % 3) {
     case 0:
       states.forEach((state) => {
         state.setAttribute("fill", "#eee");
