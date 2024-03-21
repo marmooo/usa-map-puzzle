@@ -9,7 +9,7 @@ const urlsToCache = [
   "/usa-map-puzzle/mp3/correct1.mp3",
   "/usa-map-puzzle/mp3/correct3.mp3",
   "/usa-map-puzzle/favicon/favicon.svg",
-  "https://cdn.jsdelivr.net/npm/fabric@5.3.0/dist/fabric.min.js",
+  "https://cdn.jsdelivr.net/npm/fabric@5.3.1/dist/fabric.min.js",
   "https://cdn.jsdelivr.net/npm/svgpath@2.6.0/+esm",
 ];
 
