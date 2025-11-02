@@ -12040,7 +12040,7 @@ async function setMovable(island, svg, grade) {
   canvas.add(group);
   if (group.selectable) {
     setPieceGuideEvent(island, group);
-    group.on("modified", () => {
+    group.on("mouseup", () => {
       playAudio("modified");
       if (checkPosition(island, group)) {
         canvas.remove(group);
